@@ -3,6 +3,7 @@ package com.wearperfect.android.app.di
 import com.wearperfect.android.app.constant.network.WearperfectAPIConstant
 import com.wearperfect.android.app.data.service.AccountService
 import com.wearperfect.android.app.data.service.FeedService
+import com.wearperfect.android.app.data.service.ProductService
 import com.wearperfect.android.app.data.service.UserService
 import dagger.Module
 import dagger.Provides
@@ -10,6 +11,7 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
+import retrofit2.Retrofit.Builder
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
@@ -42,5 +44,11 @@ object WearperfectServiceModule {
     @Provides
     fun provideAccountService(retrofitBuilder: Retrofit.Builder): AccountService {
         return retrofitBuilder.build().create(AccountService::class.java)
+    }
+
+    @Singleton
+    @Provides
+    fun provideProductService(retrofitBuilder: Builder): ProductService {
+        return retrofitBuilder.build().create(ProductService::class.java)
     }
 }

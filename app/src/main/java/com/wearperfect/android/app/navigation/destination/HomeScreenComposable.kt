@@ -4,16 +4,16 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import com.wearperfect.android.app.constant.navigation.Destination
-import com.wearperfect.android.app.ui.screen.MainScreen
+import com.wearperfect.android.app.ui.screen.home.HomeScreen
 
-fun NavGraphBuilder.mainScreenComposable(
+fun NavGraphBuilder.homeScreenComposable(
     rootNavController: NavHostController,
     navigateToLogin: () -> Unit
 ){
     composable(
-        route = Destination.MAIN_SCREEN.route
+        route = Destination.HOME_SCREEN.route
     ){
-        MainScreen(
+        HomeScreen(
             rootNavController = rootNavController,
             navigateToLogin = navigateToLogin
         )

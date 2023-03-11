@@ -11,8 +11,8 @@ enum class Destination(val route: String, val title: String) {
     LOGIN_HELP_SCREEN(route = "/auth/login/help", title = "Log in help"),
     SIGNUP_SCREEN(route = "/auth/signup", title = "Sign up"),
 
-    MAIN_NAV_GRAPH(route = "/main", title = "Main Nav Graph"),
-    MAIN_SCREEN(route = "/main/home", title = "Main"),
+    HOME_NAV_GRAPH(route = "/main", title = "Main Nav Graph"),
+    HOME_SCREEN(route = "/main/home", title = "Main"),
 
     BOTTOM_NAV_HOST(route = "/main/home/host", title = "Bottom Nav Host"),
     BOTTOM_NAV_GRAPH(route = "/main/home/tabs", title = "Bottom Nav Graph"),

@@ -39,7 +39,7 @@ fun SplashScreen(
         if (logInState is RequestState.Success<Boolean>){
             Log.i("SplashScreen", "SplashScreen LaunchedEffect: isLoggedIn: ${(logInState as RequestState.Success<Boolean>)}")
             if ((logInState as RequestState.Success<Boolean>).data) {
-                rootNavController.navigate(Destination.MAIN_NAV_GRAPH.route) {
+                rootNavController.navigate(Destination.HOME_NAV_GRAPH.route) {
                     popUpTo(Destination.ROOT_NAV_GRAPH.route) { inclusive = true }
                     launchSingleTop = true
                 }

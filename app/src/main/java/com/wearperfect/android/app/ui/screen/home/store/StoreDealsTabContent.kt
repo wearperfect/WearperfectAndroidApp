@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
+import com.wearperfect.android.app.component.card.PerfectBannerCard
 
 @Composable
 fun StoreDealsTabContent(navController: NavHostController){
@@ -19,7 +20,9 @@ fun StoreDealsTabContent(navController: NavHostController){
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text(text = "No Deals Available.")
+            PerfectBannerCard() {
+                
+            }
         }
     }
 }

@@ -15,14 +15,14 @@ import com.wearperfect.android.app.component.appbar.PerfectTopAppBar
 import com.wearperfect.android.app.component.button.PerfectIconButton
 import com.wearperfect.android.app.component.draw.drawBottomBorder
 import com.wearperfect.android.app.component.scaffold.PerfectScaffold
-import com.wearperfect.android.app.component.text.HeaderText
+import com.wearperfect.android.app.component.text.PerfectHeaderText
 
 @Composable
 fun ExploreScreen(navController: NavHostController) {
     PerfectScaffold(
         topBar = {
             PerfectTopAppBar(
-                title = { HeaderText(text = "Explore") },
+                title = { PerfectHeaderText(text = "Explore") },
                 backgroundColor = MaterialTheme.colors.background,
                 contentColor = MaterialTheme.colors.onBackground,
                 actions = { ExploreTopAppBarActions(navController) },

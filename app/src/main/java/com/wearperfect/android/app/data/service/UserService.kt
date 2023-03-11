@@ -19,6 +19,7 @@ interface UserService {
     @GET("v1/me")
     suspend fun getLoggedInUserDetails(): User
 
+    // Don't combine suspend with Call<T>
     @GET("v1/me")
     suspend fun getLoggedInUserInfo(): Call<User>
 }

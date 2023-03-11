@@ -13,18 +13,18 @@ class RootNavigator(rootNavController: NavHostController) {
     }
     val navigateToSignUp: () -> Unit = {
         rootNavController.navigate(Destination.SIGNUP_SCREEN.route){
-            popUpTo(Destination.MAIN_NAV_GRAPH.route) {inclusive = true}
+            popUpTo(Destination.HOME_NAV_GRAPH.route) {inclusive = true}
             launchSingleTop = true
         }
     }
     val navigateToLogInHelp: () -> Unit = {
         rootNavController.navigate(Destination.LOGIN_HELP_SCREEN.route){
-            popUpTo(Destination.MAIN_NAV_GRAPH.route) {inclusive = true}
+            popUpTo(Destination.HOME_NAV_GRAPH.route) {inclusive = true}
             launchSingleTop = true
         }
     }
-    val navigateToMain: () -> Unit = {
-        rootNavController.navigate(Destination.MAIN_SCREEN.route){
+    val navigateToHome: () -> Unit = {
+        rootNavController.navigate(Destination.HOME_SCREEN.route){
             popUpTo(Destination.ROOT_NAV_GRAPH.route) {inclusive = true}
             launchSingleTop = true
         }

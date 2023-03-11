@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <style name="Theme.WearperfectAndroidApp" parent="android:Theme.Material.Light.NoActionBar">
-        <item name="android:statusBarColor">@color/black</item>
+    <style name="Theme.WearperfectAndroidApp" parent="android:Theme.Material.NoActionBar">
+        <item name="android:statusBarColor">@color/status_bar_light</item>
         <item name="android:windowDisablePreview">true</item>
     </style>
 </resources>

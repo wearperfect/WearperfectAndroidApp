@@ -5,17 +5,21 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextOverflow
 
 @Composable
-fun SubHeaderText(
+fun PerfectSubLabelText(
     text: String,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    maxLines: Int = 1,
+    overflow: TextOverflow = TextOverflow.Ellipsis
 ) {
     Text(
         modifier = modifier,
         text = text,
-        fontSize = MaterialTheme.typography.h6.fontSize,
-        fontWeight = FontWeight.SemiBold,
-        color = MaterialTheme.colors.onBackground
+        style = MaterialTheme.typography.caption,
+        fontWeight = FontWeight.Normal,
+        maxLines = maxLines,
+        overflow = overflow
     )
 }

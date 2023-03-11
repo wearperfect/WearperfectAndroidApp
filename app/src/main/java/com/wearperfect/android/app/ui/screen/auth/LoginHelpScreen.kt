@@ -3,7 +3,7 @@ package com.wearperfect.android.app.ui.screen.auth
 import androidx.compose.runtime.Composable
 import com.wearperfect.android.app.component.appbar.PerfectTopAppBar
 import com.wearperfect.android.app.component.scaffold.PerfectScaffold
-import com.wearperfect.android.app.component.text.HeaderText
+import com.wearperfect.android.app.component.text.PerfectHeaderText
 
 @Composable
 fun LoginHelpScreen(
@@ -12,7 +12,7 @@ fun LoginHelpScreen(
     PerfectScaffold(
         topBar = {
             PerfectTopAppBar(
-                title = { HeaderText(text = "Log in help") },
+                title = { PerfectHeaderText(text = "Log in help") },
             )
         }
     ) {

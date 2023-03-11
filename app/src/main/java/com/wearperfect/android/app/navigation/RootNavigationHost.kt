@@ -6,8 +6,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import com.wearperfect.android.app.constant.navigation.Destination
 import com.wearperfect.android.app.navigation.navgraph.authNavGraph
+import com.wearperfect.android.app.navigation.navgraph.homeNavGraph
 import com.wearperfect.android.app.navigation.navgraph.launchNavGraph
-import com.wearperfect.android.app.navigation.navgraph.mainNavGraph
 import com.wearperfect.android.app.navigation.navigator.RootNavigator
 
 @Composable
@@ -31,9 +31,9 @@ fun RootNavigationHost(
             navigateToLogIn = rootNavigator.navigateToLogIn,
             navigateToLogInHelp = rootNavigator.navigateToLogInHelp,
             navigateToSignUp = rootNavigator.navigateToSignUp,
-            navigateToMain = rootNavigator.navigateToMain
+            navigateToHome = rootNavigator.navigateToHome
         )
-        mainNavGraph(
+        homeNavGraph(
             rootNavController = rootNavController,
             navigateToLogin = rootNavigator.navigateToLogIn
         )

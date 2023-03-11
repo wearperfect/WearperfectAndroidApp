@@ -4,18 +4,18 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-
+import androidx.compose.ui.text.font.FontWeight
 
 @Composable
-fun CaptionErrorText(
+fun PerfectSubHeaderText(
     text: String,
     modifier: Modifier = Modifier
-){
+) {
     Text(
         modifier = modifier,
-        style = MaterialTheme.typography.caption,
-        color = Color.Red,
-        text = text
+        text = text,
+        fontSize = MaterialTheme.typography.h6.fontSize,
+        fontWeight = FontWeight.SemiBold,
+        color = MaterialTheme.colors.onBackground
     )
 }

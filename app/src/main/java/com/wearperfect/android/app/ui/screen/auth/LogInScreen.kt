@@ -17,10 +17,10 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.wearperfect.android.app.component.button.PerfectButton
 import com.wearperfect.android.app.component.input.PerfectTextInput
 import com.wearperfect.android.app.component.scaffold.PerfectScaffold
-import com.wearperfect.android.app.component.text.ButtonText
-import com.wearperfect.android.app.component.text.HelperText
-import com.wearperfect.android.app.component.text.SubTitleText
-import com.wearperfect.android.app.component.text.TitleText
+import com.wearperfect.android.app.component.text.PerfectHelperText
+import com.wearperfect.android.app.component.text.PerfectButtonText
+import com.wearperfect.android.app.component.text.PerfectSubTitleText
+import com.wearperfect.android.app.component.text.PerfectTitleText
 import com.wearperfect.android.app.constant.network.RequestState
 import com.wearperfect.android.app.data.model.UserCredential
 import com.wearperfect.android.app.ui.viewmodel.AccountViewModel
@@ -30,7 +30,7 @@ import com.wearperfect.android.app.ui.viewmodel.AccountViewModel
 fun LogInScreen(
     navigateToLogInHelp: () -> Unit,
     navigateToSignUp: () -> Unit,
-    navigateToMain: () -> Unit,
+    navigateToHome: () -> Unit,
     accountViewModel: AccountViewModel = hiltViewModel()
 ) {
     val logInState by accountViewModel.logInStateFlow.collectAsState()
@@ -43,7 +43,7 @@ fun LogInScreen(
         if(logInState is RequestState.Success<Boolean>){
             Log.i("LogInScreen", "LogInScreen LaunchedEffect: isLoggedIn: ${(logInState as RequestState.Success<Boolean>)}")
             if ((logInState as RequestState.Success<Boolean>).data) {
-                navigateToMain()
+                navigateToHome()
             }
         }
     })
@@ -75,8 +75,8 @@ fun LogInScreen(
                     .fillMaxWidth()
                     .padding(horizontal = 24.dp),
             ) {
-                TitleText(text = "Wearperfect")
-                SubTitleText(text = "Let your style do the talking.")
+                PerfectTitleText(text = "Wearperfect")
+                PerfectSubTitleText(text = "Let your style do the talking.")
                 Spacer(
                     modifier = Modifier.size(20.dp)
                 )
@@ -127,15 +127,15 @@ fun LogInScreen(
                     }
                 ) {
                     if(inputEnabled){
-                        ButtonText(text = "Log in")
+                        PerfectButtonText(text = "Log in")
                     } else {
-                        ButtonText(text = "Logging in...")
+                        PerfectButtonText(text = "Logging in...")
                     }
                 }
                 Spacer(
                     modifier = Modifier.size(12.dp)
                 )
-                HelperText(
+                PerfectHelperText(
                     queryText = "Forgot your login details? ",
                     helpText = "Get help.",
                     onClick = { navigateToLogInHelp() }
@@ -143,7 +143,7 @@ fun LogInScreen(
                 Spacer(
                     modifier = Modifier.size(8.dp)
                 )
-                HelperText(
+                PerfectHelperText(
                     queryText = "Don't have an account? ",
                     helpText = "Sign up.",
                     onClick = { navigateToSignUp() }

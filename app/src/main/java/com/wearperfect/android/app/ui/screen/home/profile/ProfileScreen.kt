@@ -17,8 +17,7 @@ import com.wearperfect.android.app.component.appbar.PerfectTopAppBar
 import com.wearperfect.android.app.component.button.PerfectIconButton
 import com.wearperfect.android.app.component.draw.drawBottomBorder
 import com.wearperfect.android.app.component.scaffold.PerfectScaffold
-import com.wearperfect.android.app.component.text.HeaderText
-import com.wearperfect.android.app.constant.navigation.Destination
+import com.wearperfect.android.app.component.text.PerfectHeaderText
 import com.wearperfect.android.app.constant.network.RequestState
 import com.wearperfect.android.app.ui.viewmodel.AccountViewModel
 
@@ -47,7 +46,7 @@ fun ProfileScreen(
     PerfectScaffold(
         topBar = {
             PerfectTopAppBar(
-                title = { HeaderText("Profile") },
+                title = { PerfectHeaderText("Profile") },
                 backgroundColor = MaterialTheme.colors.background,
                 contentColor = MaterialTheme.colors.onBackground,
                 modifier = Modifier.drawBehind {

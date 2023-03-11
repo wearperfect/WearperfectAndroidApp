@@ -11,7 +11,7 @@ fun NavGraphBuilder.authNavGraph(
     navigateToLogIn: () -> Unit,
     navigateToLogInHelp: () -> Unit,
     navigateToSignUp: () -> Unit,
-    navigateToMain: () -> Unit,
+    navigateToHome: () -> Unit,
 ){
     navigation(
         route = Destination.AUTH_NAV_GRAPH.route,
@@ -20,14 +20,14 @@ fun NavGraphBuilder.authNavGraph(
         logInScreenComposable(
             navigateToLogInHelp = navigateToLogInHelp,
             navigateToSignUp = navigateToSignUp,
-            navigateToMain = navigateToMain
+            navigateToHome = navigateToHome
         )
         loginHelpScreenComposable(
             navigateToLogIn = navigateToLogIn
         )
         signUpScreenComposable(
             navigateToLogIn = navigateToLogIn,
-            navigateToMain = navigateToMain
+            navigateToHome = navigateToHome
         )
     }
 }

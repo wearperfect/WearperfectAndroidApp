@@ -18,10 +18,10 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.wearperfect.android.app.component.button.PerfectButton
 import com.wearperfect.android.app.component.input.PerfectTextInput
 import com.wearperfect.android.app.component.scaffold.PerfectScaffold
-import com.wearperfect.android.app.component.text.ButtonText
-import com.wearperfect.android.app.component.text.HelperText
-import com.wearperfect.android.app.component.text.SubTitleText
-import com.wearperfect.android.app.component.text.TitleText
+import com.wearperfect.android.app.component.text.PerfectHelperText
+import com.wearperfect.android.app.component.text.PerfectButtonText
+import com.wearperfect.android.app.component.text.PerfectSubTitleText
+import com.wearperfect.android.app.component.text.PerfectTitleText
 import com.wearperfect.android.app.constant.network.RequestState
 import com.wearperfect.android.app.data.model.AccessToken
 import com.wearperfect.android.app.data.model.UserRegistrationData
@@ -31,7 +31,7 @@ import com.wearperfect.android.app.ui.viewmodel.AccountViewModel
 @Composable
 fun SignUpScreen(
     navigateToLogIn: () -> Unit,
-    navigateToMain: () -> Unit,
+    navigateToHome: () -> Unit,
     accountViewModel: AccountViewModel = hiltViewModel(),
 ) {
     val signUpState by accountViewModel.signUpStateFlow.collectAsState()
@@ -44,7 +44,7 @@ fun SignUpScreen(
     LaunchedEffect(key1 = logInState, block = {
         if(logInState is RequestState.Success<Boolean>){
             if ((logInState as RequestState.Success<Boolean>).data) {
-                navigateToMain()
+                navigateToHome()
             }
         }
     })
@@ -111,8 +111,8 @@ fun SignUpScreen(
                     .fillMaxWidth()
                     .padding(horizontal = 24.dp),
             ) {
-                TitleText(text = "Wearperfect")
-                SubTitleText(text = "Let your style do the talking.")
+                PerfectTitleText(text = "Wearperfect")
+                PerfectSubTitleText(text = "Let your style do the talking.")
                 Spacer(
                     modifier = Modifier.size(20.dp)
                 )
@@ -193,15 +193,15 @@ fun SignUpScreen(
                     onClick = { register() }
                 ) {
                     if(signUpState is RequestState.Loading || signUpState is RequestState.Success<AccessToken>){
-                        ButtonText(text = "Signing up...")
+                        PerfectButtonText(text = "Signing up...")
                     } else {
-                        ButtonText(text = "Sign up")
+                        PerfectButtonText(text = "Sign up")
                     }
                 }
                 Spacer(
                     modifier = Modifier.size(12.dp)
                 )
-                HelperText(
+                PerfectHelperText(
                     queryText = "Already have an account? ",
                     helpText = "Log in.",
                     onClick = { navigateToLogIn() }

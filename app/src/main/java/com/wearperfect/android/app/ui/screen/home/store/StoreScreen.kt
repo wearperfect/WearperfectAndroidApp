@@ -5,22 +5,31 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.graphics.Color
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.wearperfect.android.app.component.appbar.PerfectTopAppBar
 import com.wearperfect.android.app.component.button.PerfectIconButton
 import com.wearperfect.android.app.component.draw.drawBottomBorder
 import com.wearperfect.android.app.component.scaffold.PerfectScaffold
-import com.wearperfect.android.app.component.text.HeaderText
+import com.wearperfect.android.app.component.text.PerfectHeaderText
+import com.wearperfect.android.app.data.dto.ProductFilterDTO
+import com.wearperfect.android.app.ui.viewmodel.ProductFilterViewModel
 
 @Composable
-fun StoreScreen(navController: NavHostController) {
+fun StoreScreen(
+    navController: NavHostController
+) {
+
     PerfectScaffold(
         topBar = {
             PerfectTopAppBar(
-                title = { HeaderText(text = "Store") },
+                title = { PerfectHeaderText(text = "Store") },
                 backgroundColor = MaterialTheme.colors.background,
                 contentColor = MaterialTheme.colors.onBackground,
                 actions = { StoreTopAppBarActions(navController) },

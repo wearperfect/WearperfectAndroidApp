@@ -7,7 +7,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 
 @Composable
-fun HeaderText(
+fun PerfectHeaderText(
     text: String,
     modifier: Modifier = Modifier
 ) {

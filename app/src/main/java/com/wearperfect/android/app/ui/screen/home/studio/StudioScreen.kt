@@ -10,14 +10,14 @@ import androidx.navigation.NavHostController
 import com.wearperfect.android.app.component.appbar.PerfectTopAppBar
 import com.wearperfect.android.app.component.draw.drawBottomBorder
 import com.wearperfect.android.app.component.scaffold.PerfectScaffold
-import com.wearperfect.android.app.component.text.HeaderText
+import com.wearperfect.android.app.component.text.PerfectHeaderText
 
 @Composable
 fun StudioScreen(navController: NavHostController) {
     PerfectScaffold(
         topBar = {
             PerfectTopAppBar(
-                title = { HeaderText("Studio") },
+                title = { PerfectHeaderText("Studio") },
                 backgroundColor = MaterialTheme.colors.background,
                 contentColor = MaterialTheme.colors.onBackground,
                 modifier = Modifier.drawBehind {

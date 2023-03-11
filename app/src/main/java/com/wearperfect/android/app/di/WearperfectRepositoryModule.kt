@@ -1,11 +1,10 @@
 package com.wearperfect.android.app.di
 
 import com.wearperfect.android.app.data.dao.AccountDAO
-import com.wearperfect.android.app.data.repository.AccountRepository
-import com.wearperfect.android.app.data.repository.FeedRepository
-import com.wearperfect.android.app.data.repository.UserRepository
+import com.wearperfect.android.app.data.repository.*
 import com.wearperfect.android.app.data.service.AccountService
 import com.wearperfect.android.app.data.service.FeedService
+import com.wearperfect.android.app.data.service.ProductService
 import com.wearperfect.android.app.data.service.UserService
 import dagger.Module
 import dagger.Provides
@@ -24,11 +23,16 @@ object WearperfectRepositoryModule {
 
     @Singleton
     @Provides
-    fun provideUserRepository(userService: UserService): UserRepository =
-        UserRepository(userService)
+    fun provideUserRepository(userService: UserService, preferencesDataStoreRepository: PreferencesDataStoreRepository): UserRepository =
+        UserRepository(userService, preferencesDataStoreRepository)
 
     @Singleton
     @Provides
     fun provideFeedRepository(feedService: FeedService): FeedRepository =
         FeedRepository(feedService)
+
+    @Singleton
+    @Provides
+    fun provideProductRepository(productService: ProductService): ProductRepository =
+        ProductRepository(productService)
 }

@@ -22,7 +22,7 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import com.wearperfect.android.app.component.button.PerfectIconButton
-import com.wearperfect.android.app.component.text.CaptionErrorText
+import com.wearperfect.android.app.component.text.PerfectCaptionErrorText
 
 @Composable
 fun PerfectTextInput(
@@ -103,12 +103,12 @@ fun PerfectTextInput(
             }
         )
         if (showError) {
-            CaptionErrorText(
+            PerfectCaptionErrorText(
                 text = errorText,
             )
         }
         if (showSuccess) {
-            CaptionErrorText(
+            PerfectCaptionErrorText(
                 text = successText,
             )
         }

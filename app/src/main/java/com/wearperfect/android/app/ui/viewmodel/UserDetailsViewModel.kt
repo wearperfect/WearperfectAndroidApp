@@ -1,5 +1,6 @@
 package com.wearperfect.android.app.ui.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.wearperfect.android.app.constant.network.RequestState
@@ -30,6 +31,7 @@ class UserDetailsViewModel @Inject constructor(private val userRepository: UserR
                 }
             }
         } catch (e: Exception){
+            Log.e("UserDetailsViewModel", "getLoggedInUserDetails: ${e.message}")
             _loggedInUserDetails.value = RequestState.Error(e)
         }
     }

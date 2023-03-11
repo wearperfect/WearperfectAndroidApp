@@ -7,7 +7,7 @@ import com.wearperfect.android.app.ui.screen.auth.SignUpScreen
 
 fun NavGraphBuilder.signUpScreenComposable(
     navigateToLogIn: () -> Unit,
-    navigateToMain: () -> Unit
+    navigateToHome: () -> Unit
 ){
 
     composable(
@@ -15,7 +15,7 @@ fun NavGraphBuilder.signUpScreenComposable(
     ){
         SignUpScreen(
             navigateToLogIn = navigateToLogIn,
-            navigateToMain = navigateToMain
+            navigateToHome = navigateToHome
         )
     }
 }

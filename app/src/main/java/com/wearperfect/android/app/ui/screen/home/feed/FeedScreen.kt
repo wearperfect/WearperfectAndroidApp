@@ -18,7 +18,7 @@ import com.wearperfect.android.app.component.appbar.PerfectTopAppBar
 import com.wearperfect.android.app.component.button.PerfectIconButton
 import com.wearperfect.android.app.component.draw.drawBottomBorder
 import com.wearperfect.android.app.component.scaffold.PerfectScaffold
-import com.wearperfect.android.app.component.text.HeaderText
+import com.wearperfect.android.app.component.text.PerfectHeaderText
 import com.wearperfect.android.app.constant.network.RequestState
 import com.wearperfect.android.app.data.model.User
 import com.wearperfect.android.app.ui.viewmodel.AccountViewModel
@@ -51,7 +51,7 @@ fun FeedScreen(
     PerfectScaffold(
         topBar = {
             PerfectTopAppBar(
-                title = { HeaderText(text = "Feed") },
+                title = { PerfectHeaderText(text = "Feed") },
                 actions = { FeedTopAppBarActions(navController) },
                 modifier = Modifier.drawBehind {
                     this.drawBottomBorder(

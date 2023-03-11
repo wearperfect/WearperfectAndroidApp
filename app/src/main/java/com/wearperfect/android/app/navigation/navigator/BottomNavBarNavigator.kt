@@ -5,8 +5,8 @@ import com.wearperfect.android.app.constant.navigation.Destination
 
 class BottomNavBarNavigator(navController: NavHostController) {
 
-    val navigateToMain: () -> Unit = {
-        navController.navigate(Destination.MAIN_NAV_GRAPH.route){
+    val navigateToHome: () -> Unit = {
+        navController.navigate(Destination.HOME_NAV_GRAPH.route){
             popUpTo(Destination.AUTH_NAV_GRAPH.route) {inclusive = true}
             launchSingleTop = true
         }
